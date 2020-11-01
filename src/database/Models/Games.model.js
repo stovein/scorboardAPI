@@ -5,8 +5,7 @@ const gamesSchema = new Schema(
     {
         gameID: { type: Number, required: true, unique: true },
         title: { type: String, required: true },
-        users: [{ type: Schema.Types.ObjectId, ref:'users'}],
-        total_play_count: {type: Number}
+        total_play_count: {type: Number, default: 0}
     },
     {
         timestamps: true

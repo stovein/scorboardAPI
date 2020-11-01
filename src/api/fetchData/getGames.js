@@ -4,7 +4,7 @@ const ScorboardController = require('../../database/Controllers/ScorboardControl
 function getGames(){
     // unique users eklenecek
     const gamesController = new GamesController();
-    return gamesController.findAllGames();
+    return gamesController.findAllActiveGames();
 }
 
 

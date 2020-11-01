@@ -10,7 +10,12 @@ function getScorboard(gameID){
         throw new Error('Game not found');
     }
     
-    return scorboardController.getScoreboardForOneGame(gameID);
+    let scoreboard = scorboardController.getScoreboardForOneGame(gameID)
+    scoreboard = scoreboard.map(function (user, idx) {
+        return {...user, rank: idx+1}
+    })
+
+    return scoreboard;
 }
 
 module.exports = getScorboard;

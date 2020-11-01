@@ -1,0 +1,16 @@
+{
+  "name": "scorboardapi",
+  "version": "1.0.0",
+  "description": "Eş zamanlı ve çok kullanıcılı online bir oyun platformumuz var (multi-game). Bu platformda oyuncuların, oynadıkları oyunlarda aldıkları toplam puana göre bir skorbord oluşturuluyor.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Talha Doğrul",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express.js": "^1.0.0",
+    "mongoose": "^5.10.11"
+  }
+}

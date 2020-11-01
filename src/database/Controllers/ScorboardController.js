@@ -12,13 +12,37 @@ class ScorboardController {
         return scoreboard;
     }
 
+    async getScoreboardForOneGameLimitless(gameID) {
+        const scoreboard = await this.model.find({ gameID: gameID }).exec();
+        return scoreboard;
+    }
+
     async getScoreForOneUserAndGame(gameID, userID) {
         const user = await this.model.find({ gameID: gameID, userID: userID}).exec();
         return user;
     }
 
     async addScore(gameID, userID, score) {
-        
+        const scoreboardForAGame = getScoreboardForOneGameLimitless(gameID).then((scoreboard) => {
+            Object.values(scoreboard).forEach((object, idx) => {
+                console.log(object.users.userID)
+                if (object.users.userID === userID) {
+                    return [true, scoreboard, idx];
+                }
+            })
+            return [false, scoreboard];
+        })
+        .then((arr) => {
+            const scoreboard = arr[1];
+            const idx = arr[2];
+            if (arr[0] === true) {
+                const oldScore = scoreboard[idx];
+                
+            }
+            else {
+                const oldScore = -1;
+            }
+        })
 
     }
 

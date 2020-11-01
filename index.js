@@ -7,7 +7,7 @@ const getEnv = require("./src/helperFunctions/getEnv");
 
 const getGames = require('./src/api/fetchData/getGames');
 const getScoreboard = require('./src/api/fetchData/getScoreboard');
-//const addScore = require('./src/api/fetchData/addScore');
+const addScore = require('./src/api/insertData/addScore');
 
 // Database Connection
 const connectionUrl = getEnv('DATABASE_URI');
@@ -23,6 +23,7 @@ app.use(bodyParser.json());
 app.get('/' ,(req, res) => res.send('Hello World'))
 getGames(app);
 getScoreboard(app);
+addScore(app);
 
 const port = getEnv('PORT');
 app.listen(

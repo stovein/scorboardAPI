@@ -10,11 +10,17 @@ class GamesController {
         return allGames;
     }
 
-    addGame(title) {
+    async findOneGame(gameID) {
+        const theGame = await this.model.find({gameID: gameID}).exec();
+        return theGame;
+    }
+
+    addGame(title, isActive) {
         const gameID = this.findLastID() + 1
         const newGame = new GamesModel({
             gameID: gameID,
-            title: title
+            title: title,
+            isActive: isActive,
         });
         this.model.create(newGame);
     }

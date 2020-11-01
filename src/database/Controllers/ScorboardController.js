@@ -8,8 +8,8 @@ class ScorboardController {
     }
 
     async getScoreboardForOneGame(gameID, limit = 25, order=-1) {
-        const allUsers = await this.model.find({ gameID: gameID }).sort({score: order}).limit(limit).exec();
-        return allUsers;
+        const scoreboard = await this.model.find({ gameID: gameID }).sort({score: order}).limit(limit).exec();
+        return scoreboard;
     }
 
     async getScoreForOneUserAndGame(gameID, userID) {
@@ -23,7 +23,8 @@ class ScorboardController {
     }
 
     uniqueUsersForAGame(gameID) {
-        
+        const allUseres = await this.model.find({ gameID: gameID }).exec();
+        return allUsers;
     }
 }
 

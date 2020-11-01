@@ -5,7 +5,8 @@ const gamesSchema = new Schema(
     {
         gameID: { type: Number, required: true, unique: true },
         title: { type: String, required: true },
-        total_play_count: {type: Number, default: 0}
+        totalPlayCount: {type: Number, default: 0},
+        isActive : {type: Boolean, default: true}
     },
     {
         timestamps: true

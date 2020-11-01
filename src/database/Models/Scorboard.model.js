@@ -5,7 +5,7 @@ const scorboardSchema = new Schema(
     {
         users: [{ type: Schema.Types.ObjectId, ref:'users'}],
         games: [{ type: Schema.Types.ObjectId, ref:'games'}],
-        scor: { type: Number, required: true },
+        score: { type: Number, required: true },
     },
     {
         timestamps: true

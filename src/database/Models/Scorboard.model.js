@@ -12,6 +12,6 @@ const scorboardSchema = new Schema(
     }
 );
 
-const Scorboard = mongoose.model('games', gamesSchema);
+const Scorboard = mongoose.model('scorboard', scorboardSchema);
 
-module.exports = Games;
+module.exports = Scorboard;

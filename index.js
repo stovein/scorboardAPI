@@ -5,18 +5,23 @@ const bodyParser = require("body-parser");
 const mongoose = require('mongoose');
 const getEnv = require("./src/helperFunctions/getEnv");
 
+const getGames = require('./src/api/fetchData/getGames');
+//const getScorboard = require('./src/api/fetchData/getScoreboard');
+//const addScore = require('./src/api/fetchData/addScore');
+
 // Database Connection
 const connectionUrl = getEnv('DATABASE_URI');
 const options = {useNewUrlParser: true, useUnifiedTopology:true};
 
 mongoose.connect(connectionUrl, options);
 
-require('./src/test/addTestData')();
+//require('./src/test/addTestData')();
 
 // Routing
 const app = express();
 app.use(bodyParser.json());
 app.get('/' ,(req, res) => res.send('Hello World'))
+getGames(app);
 
 const port = getEnv('PORT');
 app.listen(

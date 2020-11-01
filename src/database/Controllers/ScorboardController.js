@@ -22,8 +22,8 @@ class ScorboardController {
 
     }
 
-    uniqueUsersForAGame(gameID) {
-        const allUseres = await this.model.find({ gameID: gameID }).exec();
+    async uniqueUsersForAGame(gameID) {
+        const allUsers = await this.model.find({ gameID: gameID }).exec();
         return allUsers;
     }
 }

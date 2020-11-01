@@ -1,10 +1,13 @@
 const GamesController = require('../../database/Controllers/GamesController');
-const ScorboardController = require('../../database/Controllers/ScorboardController');
 
-function getGames(){
+function getGames(app){
     // unique users eklenecek
     const gamesController = new GamesController();
-    return gamesController.findAllActiveGames();
+    gamesController.findAllActiveGames().then(games => {
+        app.get('/api/get_games', (req, res) => {
+            res.send(games);
+        })
+    })
 }
 
 

@@ -2,7 +2,7 @@ const ScorboardController = require('../../database/Controllers/ScorboardControl
 const GamesController = require('../../database/Controllers/GamesController');
 
 
-function getScorboard(gameID){
+function getScorboard(app){
     const scorboardController = new ScorboardController();
     const gamesController = new GamesController();
 

@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 const getEnv = require("./src/helperFunctions/getEnv");
 
 const getGames = require('./src/api/fetchData/getGames');
-//const getScorboard = require('./src/api/fetchData/getScoreboard');
+const getScoreboard = require('./src/api/fetchData/getScoreboard');
 //const addScore = require('./src/api/fetchData/addScore');
 
 // Database Connection
@@ -22,6 +22,7 @@ const app = express();
 app.use(bodyParser.json());
 app.get('/' ,(req, res) => res.send('Hello World'))
 getGames(app);
+getScoreboard(app);
 
 const port = getEnv('PORT');
 app.listen(

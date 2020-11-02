@@ -11,7 +11,7 @@ function getScorboard(app){
 
         gamesController.findOneGame(gameID).then((game) => {
             if (game.length === 0 ){
-                res.send('Can\'t find the game you are searching for.');
+                res.send('Aradığınız oyunu bulamadık.');
             }
         })        
 

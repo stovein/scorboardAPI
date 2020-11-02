@@ -1,4 +1,4 @@
-#Scoreboard API
+# Scoreboard API
 
 **Get Games**
 ----
@@ -87,6 +87,6 @@
 ----
 ----
 
-##Database Diagram
+## Database Diagram
 
 ![Database Diagram](/diagram.jpg)

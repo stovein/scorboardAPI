@@ -11,6 +11,12 @@ class UsersController {
         return allUsers;
     }
 
+    async findOneUser(userID) {
+        const user = await this.model.find({userID: userID}).exec()
+        .catch((e) => {console.log(e)})
+        return user;
+    }
+
     async addUser(name) {
         const userID = await this.findLastID() + 1
         const newUser = new UsersModel({

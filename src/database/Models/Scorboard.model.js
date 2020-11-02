@@ -3,8 +3,8 @@ const Schema = mongoose.Schema;
 
 const scorboardSchema = new Schema(
     {
-        users: [{ type: Schema.Types.ObjectId, ref:'users'}],
-        games: [{ type: Schema.Types.ObjectId, ref:'games'}],
+        user: [{ type: Schema.Types.ObjectId, ref:'users'}],
+        game: [{ type: Schema.Types.ObjectId, ref:'games'}],
         score: { type: Number, required: true },
     },
     {
